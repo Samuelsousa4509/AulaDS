@@ -1,4 +1,10 @@
 function soma(a, b) {
-    console.log(a + b)
+    return a + b;
 } 
-soma(123,456)
+
+
+
+module.exports = soma;
+
+resultado = soma(5, 10);
+console.log(resultado)
