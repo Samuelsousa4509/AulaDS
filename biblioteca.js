@@ -47,6 +47,25 @@ const biblioteca = {
         }
 
         console.log("O livro " + nome + " não existe.");
+    },
+
+    devolver(nome) {
+        for (let i = 0; i < this.livros.length; i++) {
+            const p = this.livros[i];
+            if (p.nome === nome) {
+                if (p.disponivel == false) {
+                    p.disponivel = true;
+                    p.alugado = false;
+                    p.estoque = 1;
+                    console.log("Livro", nome, "devolvido com sucesso!");
+                    return;
+                } else {
+                    console.log("O", nome, "ja esta disponivel!")
+                    return;
+                }
+            }
+        }
+        console.log("O", nome, "Nao foi encontrado!!")
     }
 }
 
@@ -62,3 +81,5 @@ biblioteca.adicionarLivros(
 biblioteca.mostrarLivros();
 
 biblioteca.alugar("As 48 Leis do Poder");
+
+biblioteca.devolver("As 48 Leis do Poder");
