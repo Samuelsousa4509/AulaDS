@@ -66,6 +66,17 @@ const biblioteca = {
             }
         }
         console.log("O", nome, "Nao foi encontrado!!")
+    },
+    
+    removerLivro(nome){
+        for(let i = 0; i < this.livros.length; i++) {
+            if(this.livros[i].nome.toLowerCase() === nome.toLowerCase()) {
+                const removido = this.livros[i];
+                this.livros.splice(i, 1);
+                console.log("Livro removido", removido.nome);
+                return;
+            }
+        } console.log("Produto não encontrado");
     }
 }
 
@@ -78,8 +89,82 @@ biblioteca.adicionarLivros(
     210
 );
 
+biblioteca.adicionarLivros(
+    "Pai Rico, Pai Pobre",
+    "Robert Kiyosaki",
+    "Finanças",
+    150
+);
+
+biblioteca.adicionarLivros(
+    "O Homem Mais Rico da Babilônia",
+    "George S. Clason",
+    "Finanças",
+    120
+);
+
+biblioteca.adicionarLivros(
+    "Hábitos Atômicos",
+    "James Clear",
+    "Desenvolvimento Pessoal",
+    180
+);
+
+biblioteca.adicionarLivros(
+    "O Poder do Hábito",
+    "Charles Duhigg",
+    "Desenvolvimento Pessoal",
+    160
+);
+
+biblioteca.adicionarLivros(
+    "A Arte da Guerra",
+    "Sun Tzu",
+    "Estratégia",
+    90
+);
+
+biblioteca.adicionarLivros(
+    "O Príncipe",
+    "Nicolau Maquiavel",
+    "Política",
+    80
+);
+
+biblioteca.adicionarLivros(
+    "Mais Esperto que o Diabo",
+    "Napoleon Hill",
+    "Desenvolvimento Pessoal",
+    140
+);
+
+biblioteca.adicionarLivros(
+    "Pense e Enriqueça",
+    "Napoleon Hill",
+    "Finanças",
+    170
+);
+
+biblioteca.adicionarLivros(
+    "O Milagre da Manhã",
+    "Hal Elrod",
+    "Desenvolvimento Pessoal",
+    130
+);
+
+biblioteca.adicionarLivros(
+    "Quem Pensa Enriquece",
+    "Napoleon Hill",
+    "Finanças",
+    110
+);
+
+
+
 biblioteca.mostrarLivros();
 
 biblioteca.alugar("As 48 Leis do Poder");
 
 biblioteca.devolver("As 48 Leis do Poder");
+
+biblioteca.removerLivro("As 48 Leis do Poder")
